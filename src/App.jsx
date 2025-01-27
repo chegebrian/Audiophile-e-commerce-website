@@ -1,8 +1,13 @@
+import Footer from "./ui/Footer";
+import Header from "./ui/Header";
 
 function App() {
-  return <>
-  <p className="text-amber-500 text-3xl">hello world</p>
-  </>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
