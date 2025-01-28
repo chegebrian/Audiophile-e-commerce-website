@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
+import HeadphoneCard from "../features/headphones/HeadphoneCard";
+import SpeakerCard from "../features/speakers/SpeakerCard";
+import EarphoneCard from "../features/earphones/EarphoneCard";
 
 function Header() {
   const [isOpen, setIsopen] = useState(false);
@@ -21,27 +24,33 @@ function Header() {
       <nav className={`items-center gap-6 lg:flex ${isOpen ? "" : "hidden"}`}>
         <NavLink
           to="/"
-          className="text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600"
+          className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block"
         >
           home
         </NavLink>
-        <NavLink
-          to="/headphones"
-          className="text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600"
-        >
-          headphones
+        <NavLink to="/headphones">
+          <span className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block">
+            headphones
+          </span>
+          <span className="lg:hidden">
+            <HeadphoneCard />
+          </span>
         </NavLink>
-        <NavLink
-          to="/speakers"
-          className="text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600"
-        >
-          speakers
+        <NavLink to="/speakers">
+          <span className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block">
+            speakers
+          </span>
+          <span className="lg:hidden">
+            <SpeakerCard />
+          </span>
         </NavLink>
-        <NavLink
-          to="/earphones"
-          className="text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600"
-        >
-          earphones
+        <NavLink to="/earphones">
+          <span className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block">
+            earphones
+          </span>
+          <span className="lg:hidden">
+            <EarphoneCard />
+          </span>
         </NavLink>
       </nav>
       <img
