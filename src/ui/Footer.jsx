@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
 
 function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer className="bg-black">
+      <Navbar />
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
