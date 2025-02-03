@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route element={<Applayout />}>
-        <Route index element={<Navigate replace to="/" />} />
+        {/* <Route index element={<Navigate replace to="/" />} /> */}
         <Route path="/" element={<Homepage />} />
         <Route />
         <Route />

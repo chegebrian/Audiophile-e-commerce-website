@@ -11,7 +11,7 @@ function Header() {
     setIsopen((isOpen) => !isOpen);
   }
   return (
-    <header className="flex h-24 items-center justify-between bg-black max-lg:relative">
+    <header className="flex h-24 items-center justify-between border-b border-[#d9d9d954] bg-[#191919] max-lg:relative">
       <img
         src={`${isOpen ? "/images/shared/tablet/icon-close-menu.svg" : "/images/shared/tablet/icon-hamburger.svg"}`}
         alt="open icon"
@@ -28,33 +28,31 @@ function Header() {
         >
           home
         </NavLink>
-        <NavLink to="/headphones" className="text-white">
-          <span className="hidden text-sm font-bold tracking-widest uppercase transition duration-300 hover:text-amber-600 lg:block">
-            headphones
-          </span>
-
-          <span className={`${isOpen ? "" : "hidden"} lg:hidden`}>
-            <HeadphoneCard />
-          </span>
+        <NavLink
+          to="/headphones"
+          className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block"
+        >
+          headphones
         </NavLink>
-        <NavLink to="/speakers" className="text-white">
-          <span className="hidden text-sm font-bold tracking-widest uppercase transition duration-300 hover:text-amber-600 lg:block">
-            speakers
-          </span>
-
-          <span className={`${isOpen ? "" : "hidden"} lg:hidden`}>
-            <SpeakerCard />
-          </span>
+        <NavLink
+          to="/speakers"
+          className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block"
+        >
+          speakers
         </NavLink>
-        <NavLink to="/earphones" className="text-white">
-          <span className="hidden text-sm font-bold tracking-widest uppercase transition duration-300 hover:text-amber-600 lg:block">
-            earphones
-          </span>
-
-          <span className={`${isOpen ? "" : "hidden"} lg:hidden`}>
-            <EarphoneCard />
-          </span>
+        <NavLink
+          to="/earphones"
+          className="hidden text-sm font-bold tracking-widest text-white uppercase transition duration-300 hover:text-amber-600 lg:block"
+        >
+          earphones
         </NavLink>
+        <ul
+          className={`flex items-center  ${isOpen ? "" : "hidden"} w-full lg:hidden flex-col gap-16 sm:flex-row sm:gap-4 bg-white`}
+        >
+          <HeadphoneCard />
+          <SpeakerCard />
+          <EarphoneCard />
+        </ul>
       </nav>
       <img
         src="/images/shared/desktop/icon-cart.svg"

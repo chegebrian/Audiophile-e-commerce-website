@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 function Footer() {
   return (
-    <footer className="bg-black py-6">
+    <footer className="bg-[#191919] py-6">
       <Navbar />
       <p className="mt-6 text-center text-slate-300 sm:text-start lg:w-[50%]">
         {" "}

@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 function HeadphoneCard() {
   return (
-    <div className="bg-gray-100 rounded-xl flex items-center flex-col p-6 group">
+    <NavLink to="/headphones" className="bg-gray-100 rounded-xl w-full flex items-center flex-col p-6 group">
       <img
-        className="w-32 -mt-18"
+        className=" h-36 sm:object-cover object-contain -mt-18"
         src="/images/shared/desktop/image-headphones.png"
         alt="headphones"
       />
@@ -16,7 +17,7 @@ function HeadphoneCard() {
           alt="right arrow"
         />
       </span>
-    </div>
+    </NavLink>
   );
 }
 
