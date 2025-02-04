@@ -3,7 +3,7 @@ import Button from './Button'
 
 function Hero() {
   return (
-    <section className="bg-[#191919]  flex items-center justify-center  px-10 lg:px-30  lg:justify-start h-screen bg-[url('/images/home/mobile/image-hero.jpg')] sm:bg-[url('/images/home/tablet/image-hero.jpg')] lg:bg-[url('/images/home/desktop/image-hero.jpg')] bg-no-repeat bg-center bg-contain">
+    <section className="bg-[#191919]  flex items-center justify-center  px-8 lg:px-30  lg:justify-start h-screen bg-[url('/images/home/mobile/image-hero.jpg')] sm:bg-[url('/images/home/tablet/image-hero.jpg')] lg:bg-[url('/images/home/desktop/image-hero.jpg')] bg-no-repeat bg-center bg-contain">
     <div className=" z-50 flex items-center justify-center lg:items-start lg:justify-start flex-col gap-4">
       <p className="text-sm tracking-[0.4em] lg:text-2xl text-slate-400 uppercase">
         new product
