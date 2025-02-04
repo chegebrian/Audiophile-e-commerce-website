@@ -1,12 +1,34 @@
 import React from "react";
-import Hero from "../ui/Hero";
 import PageNav from "../ui/PageNav";
 import Button from "../ui/Button";
+import BestgearContent from "../ui/BestgearContent";
 
 function Homepage() {
   return (
     <>
-      <Hero />
+      <section className="flex h-screen items-center justify-center bg-[#191919] bg-[url('/images/home/mobile/image-hero.jpg')] bg-contain bg-center bg-no-repeat px-8 sm:bg-[url('/images/home/tablet/image-hero.jpg')] lg:justify-start lg:bg-[url('/images/home/desktop/image-hero.jpg')] lg:px-30">
+        <div className="z-50 flex flex-col items-center justify-center gap-4 lg:items-start lg:justify-start">
+          <p className="text-sm tracking-[0.4em] text-slate-400 uppercase lg:text-2xl">
+            new product
+          </p>
+          <div className="flex flex-col text-2xl font-bold tracking-[0.2em] text-white uppercase lg:gap-3 lg:text-5xl">
+            <span>XX99 Mark II</span>
+            <span>Headphones</span>
+          </div>
+          <p className="text-center text-slate-300 lg:w-96 lg:text-start">
+            Experience natural, lifelike audio and exceptional build quality
+            made for the passionate music enthusiast.
+          </p>
+          <Button
+            color={"text-slate-200"}
+            backgroundColor={"bg-amber-600"}
+            hover={"hover:bg-amber-500"}
+            to={"/products"}
+          >
+            see product
+          </Button>
+        </div>
+      </section>
 
       <section className="px-8 py-36 lg:px-30">
         <PageNav />
@@ -62,15 +84,15 @@ function Homepage() {
           </div>
           <picture>
             <source
-              srcSet="/public/images/home/desktop/image-speaker-zx7.jpg"
+              srcSet="/images/home/desktop/image-speaker-zx7.jpg"
               media="(min-width: 1024px)"
             />
             <source
-              srcSet="/public/images/home/tablet/image-speaker-zx7.jpg"
+              srcSet="/images/home/tablet/image-speaker-zx7.jpg"
               media="(min-width:640px)"
             />
             <img
-              src="/public/images/home/mobile/image-speaker-zx7.jpg"
+              src="/images/home/mobile/image-speaker-zx7.jpg"
               alt="speaker-zx7"
               className="w-full rounded-lg object-cover"
             />
@@ -107,38 +129,7 @@ function Homepage() {
             </Button>
           </div>
         </div>
-        <div className="mt-12 lg:grid lg:grid-cols-2 gap-4 lg:grid-rows-1">
-          <picture className="lg:col-start-2 lg:col-end-3 ">
-            <source
-              srcSet="/images/shared/desktop/image-best-gear.jpg"
-              media="(min-width: 1024px)"
-            />
-            <source
-              srcSet="/images/shared/tablet/image-best-gear.jpg"
-              media="(min-width:640px)"
-            />
-            <img
-              src="/images/shared/mobile/image-best-gear.jpg"
-              alt="best-gear"
-              className="rounded-lg w-full object-contain"
-            />
-          </picture>
-          <div className="flex flex-col items-center lg:justify-center lg:items-start gap-8 max-lg:mt-4 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
-            <h3 className="text-3xl font-bold uppercase ">
-              Bringing you the <span className="text-amber-600">best</span>{" "}
-              audio gear
-            </h3>
-            <p>
-              Located at the heart of New York City, Audiophile is the premier
-              store for high end headphones, earphones, speakers, and audio
-              accessories. We have a large showroom and luxury demonstration
-              rooms available for you to browse and experience a wide range of
-              our products. Stop by our store to meet some of the fantastic
-              people who make Audiophile the best place to buy your portable
-              audio equipment.
-            </p>
-          </div>
-        </div>
+        <BestgearContent />
       </section>
     </>
   );
