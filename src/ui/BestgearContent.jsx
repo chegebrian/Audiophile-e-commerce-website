@@ -2,7 +2,7 @@ import React from "react";
 
 function BestgearContent() {
   return (
-    <div className="mt-12 gap-4 lg:grid lg:grid-cols-2 lg:grid-rows-1">
+    <div className="mt-28 gap-4 lg:grid lg:grid-cols-2 lg:grid-rows-1">
       <picture className="lg:col-start-2 lg:col-end-3">
         <source
           srcSet="/images/shared/desktop/image-best-gear.jpg"
