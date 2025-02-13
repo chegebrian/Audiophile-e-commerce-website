@@ -11,7 +11,7 @@ function Header() {
     setIsopen((isOpen) => !isOpen);
   }
   return (
-    <header className="flex h-24 items-center justify-between border-b border-[#d9d9d954] bg-[#191919] max-lg:relative">
+    <header className="flex h-24 items-center justify-between border-b border-[#d9d9d954] px-8 max-lg:relative lg:px-30 xl:mx-auto xl:max-w-[1280px]">
       <img
         src={`${isOpen ? "/images/shared/tablet/icon-close-menu.svg" : "/images/shared/tablet/icon-hamburger.svg"}`}
         alt="open icon"
@@ -47,7 +47,7 @@ function Header() {
           earphones
         </NavLink>
         <ul
-          className={`flex items-center  ${isOpen ? "" : "hidden"} w-full lg:hidden flex-col gap-16 sm:flex-row sm:gap-4 bg-white`}
+          className={`flex items-center ${isOpen ? "" : "hidden"} w-full flex-col gap-16 bg-white sm:flex-row sm:gap-4 lg:hidden`}
         >
           <HeadphoneCard />
           <SpeakerCard />

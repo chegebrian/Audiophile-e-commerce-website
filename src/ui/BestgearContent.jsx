@@ -2,7 +2,7 @@ import React from "react";
 
 function BestgearContent() {
   return (
-    <div className="mt-28 gap-4 lg:grid lg:grid-cols-2 lg:grid-rows-1">
+    <div className="mt-28 gap-4 lg:gap-28 lg:grid lg:grid-cols-2 lg:grid-rows-1">
       <picture className="lg:col-start-2 lg:col-end-3">
         <source
           srcSet="/images/shared/desktop/image-best-gear.jpg"
@@ -18,7 +18,7 @@ function BestgearContent() {
           className="w-full rounded-lg object-contain"
         />
       </picture>
-      <div className="flex flex-col items-center gap-8 max-lg:mt-4 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 lg:items-start lg:justify-center">
+      <div className="flex flex-col max-lg:text-center items-center gap-8 max-lg:mt-4 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 lg:items-start lg:justify-center">
         <h3 className="text-3xl font-bold uppercase">
           Bringing you the <span className="text-amber-600">best</span> audio
           gear

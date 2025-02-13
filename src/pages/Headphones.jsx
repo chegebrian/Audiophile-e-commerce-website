@@ -9,14 +9,16 @@ function Headphones() {
   return (
     <>
       <Hero>headphones</Hero>
-      <section className="px-8 pt-20 pb-36 lg:px-30 flex flex-col gap-28">
-        <Row />
-        <ReverseRow />
-        <Row />
-      </section>
-      <section className="px-8 lg:px-30 pb-36">
-        <PageNav />
-        <BestgearContent />
+      <section className="bg-slate-100">
+        <section className="flex flex-col gap-28 px-8 pt-20 pb-36 lg:px-30 xl:mx-auto xl:max-w-[1280px]">
+          <Row />
+          <ReverseRow />
+          <Row />
+        </section>
+        <section className="px-8 pb-36 lg:px-30 xl:mx-auto xl:max-w-[1280px]">
+          <PageNav />
+          <BestgearContent />
+        </section>
       </section>
     </>
   );
