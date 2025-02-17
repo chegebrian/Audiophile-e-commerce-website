@@ -34,7 +34,7 @@ function ReverseRow({ product }) {
           color={"text-slate-200"}
           backgroundColor={"bg-amber-600"}
           hover={"hover:bg-amber-500"}
-          to={"/products"}
+          to={`/${product?.slug}`}
         >
           see product
         </Button>

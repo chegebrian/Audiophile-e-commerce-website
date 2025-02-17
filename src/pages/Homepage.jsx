@@ -23,7 +23,7 @@ function Homepage() {
             color={"text-slate-200"}
             backgroundColor={"bg-amber-600"}
             hover={"hover:bg-amber-500"}
-            to={"/products"}
+            to={"/xx99-mark-two-headphones"}
           >
             see product
           </Button>
@@ -62,6 +62,7 @@ function Homepage() {
                 color={"text-white"}
                 backgroundColor={"bg-[#191919]"}
                 hover={"hover:bg-[#000]"}
+                to={"/zx9-speaker"}
               >
                 see product
               </Button>
@@ -78,6 +79,7 @@ function Homepage() {
                 backgroundHover={"hover:bg-[#191919]"}
                 border={"border-2"}
                 borderColor={"border-[#191919]"}
+                to={"/zx7-speaker"}
               >
                 see product
               </Button>
@@ -124,6 +126,7 @@ function Homepage() {
                 backgroundHover={"hover:bg-[#191919]"}
                 border={"border-2"}
                 borderColor={"border-[#191919]"}
+                to={"/yx1-earphones"}
               >
                 see product
               </Button>
