@@ -13,8 +13,7 @@ function Product() {
   const { productsData } = useProducts();
   const params = useParams();
 
-  const product = productsData.find(p => p.slug === params.slug);
-
+  const product = productsData.find((p) => p.slug === params.slug);
 
   return (
     <section className="bg-white">
@@ -25,23 +24,19 @@ function Product() {
         >
           go back
         </button>
-        <ProductRow product={product}/>
-        <ProductFeatures product={product}/>
-        <ProductImages product={product}/>
+        <ProductRow product={product} />
+        <ProductFeatures product={product} />
+        <ProductImages product={product} />
         <div className="mb-44">
           <h3 className="pb-16 text-center text-2xl font-bold uppercase lg:text-3xl">
             you may also like
           </h3>
-          <ul className="flex flex-col items-center gap-16 lg:flex-row lg:gap-4">
-            <li>
-              <Card />
-            </li>
-            <li>
-              <Card />
-            </li>
-            <li>
-              <Card />
-            </li>
+          <ul className="flex flex-col gap-16 lg:flex-row lg:gap-4">
+            {product?.others?.map((item) => (
+              <li key={item.slug}>
+                <Card item={item} />
+              </li>
+            ))}
           </ul>
         </div>
         <section>
@@ -54,3 +49,15 @@ function Product() {
 }
 
 export default Product;
+
+{
+  /* <li>
+<Card />
+</li>
+<li>
+<Card />
+</li>
+<li>
+<Card />
+</li> */
+}

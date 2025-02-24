@@ -15,22 +15,14 @@ function ProductFeatures({ product }) {
         <h3 className="mb-2 text-2xl font-bold tracking-wide uppercase md:text-3xl">
           in the box
         </h3>
-        <ul>
-          <li className="text-slate-700">
-            <span className="mr-2 text-amber-600">2</span>Earphone unit
-          </li>
-          <li className="text-slate-700">
-            <span className="mr-2 text-amber-600">6</span>Multi-size earplugs
-          </li>
-          <li className="text-slate-700">
-            <span className="mr-2 text-amber-600">1</span>User manual
-          </li>
-          <li className="text-slate-700">
-            <span className="mr-2 text-amber-600">1</span>USB-C charging cable
-          </li>
-          <li className="text-slate-700">
-            <span className="mr-2 text-amber-600">1</span>Travel pouch
-          </li>
+        <ul className="flex flex-col gap-4">
+          {product?.includedItems?.map((item) => (
+            <li key={item.item} className="text-slate-700">
+              <span className="mr-4 text-amber-600 font-bold">{item.quantity}x</span>
+              <span>{item.item}</span>
+              
+            </li>
+          ))}
         </ul>
       </div>
     </section>
@@ -38,3 +30,20 @@ function ProductFeatures({ product }) {
 }
 
 export default ProductFeatures;
+{
+  /* <li className="text-slate-700">
+<span className="mr-2 text-amber-600">2</span>Earphone unit
+</li>
+<li className="text-slate-700">
+<span className="mr-2 text-amber-600">6</span>Multi-size earplugs
+</li>
+<li className="text-slate-700">
+<span className="mr-2 text-amber-600">1</span>User manual
+</li>
+<li className="text-slate-700">
+<span className="mr-2 text-amber-600">1</span>USB-C charging cable
+</li>
+<li className="text-slate-700">
+<span className="mr-2 text-amber-600">1</span>Travel pouch
+</li> */
+}

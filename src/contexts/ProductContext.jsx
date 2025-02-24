@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 
 const products = createContext();
 
@@ -10,12 +16,19 @@ function reducer(state, action) {
     };
 }
 export function ProductProvider({ children }) {
+  const [count, setCount] = useState(1);
+
+  function handleIncrement() {
+    setCount((count) => count + 1);
+  }
+  function handleDecrement() {
+    setCount((count) => count > 1 ? count - 1 : count);
+  }
   const initialState = {
     productsData: [],
   };
 
   const [{ productsData }, dispatch] = useReducer(reducer, initialState);
-
 
   useEffect(() => {
     async function getProducts() {
@@ -33,7 +46,7 @@ export function ProductProvider({ children }) {
     getProducts();
   }, []);
   return (
-    <products.Provider value={{ productsData, dispatch }}>
+    <products.Provider value={{ productsData, dispatch, count, handleIncrement, handleDecrement }}>
       {children}
     </products.Provider>
   );

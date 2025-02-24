@@ -1,7 +1,13 @@
 import React from "react";
 import Button from "./Button";
+import { useProducts } from "../contexts/ProductContext";
 
 function ProductRow({ product }) {
+  const { count, handleIncrement, handleDecrement } = useProducts();
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   return (
     <div className="grid gap-4 lg:grid-cols-2 lg:gap-28">
       <picture>
@@ -31,15 +37,36 @@ function ProductRow({ product }) {
           {product?.description}
         </p>
 
-        <span>{product?.price}</span>
+        <span className="text-lg font-bold text-[#191919]">
+          {formatter.format(product?.price)}
+        </span>
+        <div className="flex items-center gap-5">
+          <div className="flex items-center">
+            <button
+              onClick={handleDecrement}
+              className="cursor-pointer bg-[#dbdbdb75] px-5 py-3 font-semibold outline-0 hover:bg-[#dbdbdb] hover:text-amber-600"
+            >
+              -
+            </button>
+            <span className="bg-[#dbdbdb75] px-5 py-3 font-semibold">
+              {count}
+            </span>
+            <button
+              onClick={handleIncrement}
+              className="cursor-pointer bg-[#dbdbdb75] px-5 py-3 font-semibold outline-0 hover:bg-[#dbdbdb] hover:text-amber-600"
+            >
+              +
+            </button>
+          </div>
 
-        <Button
-          color={"text-slate-200"}
-          backgroundColor={"bg-amber-600"}
-          hover={"hover:bg-amber-500"}
-        >
-          add to cart
-        </Button>
+          <Button
+            color={"text-slate-200"}
+            backgroundColor={"bg-amber-600"}
+            hover={"hover:bg-amber-500"}
+          >
+            add to cart
+          </Button>
+        </div>
       </div>
     </div>
   );
