@@ -10,10 +10,12 @@ function Button({
   backgroundHover,
   border,
   borderColor,
+  onClick,
 }) {
   return (
     <NavLink
       to={to}
+      onClick={onClick}
       className={` px-5 py-3 font-semibold tracking-widest uppercase outline-0 ${border} ${borderColor} ${color} ${backgroundColor} ${hover} ${backgroundHover} transition duration-100`}
     >
       {children}

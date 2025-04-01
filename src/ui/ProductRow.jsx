@@ -3,11 +3,16 @@ import Button from "./Button";
 import { useProducts } from "../contexts/ProductContext";
 
 function ProductRow({ product }) {
-  const { count, handleIncrement, handleDecrement } = useProducts();
+  const { count, handleIncrement, handleDecrement, cart, dispatch } =
+    useProducts();
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
+
+  function handleAddtoCart(product) {
+    dispatch({ type: "addtocart", payload: { product, quantity: count } });
+  }
   return (
     <div className="grid gap-4 lg:grid-cols-2 lg:gap-28">
       <picture>
@@ -52,7 +57,9 @@ function ProductRow({ product }) {
               {count}
             </span>
             <button
-              onClick={handleIncrement}
+              onClick={() => {
+                handleIncrement();
+              }}
               className="cursor-pointer bg-[#dbdbdb75] px-5 py-3 font-semibold outline-0 hover:bg-[#dbdbdb] hover:text-amber-600"
             >
               +
@@ -63,6 +70,7 @@ function ProductRow({ product }) {
             color={"text-slate-200"}
             backgroundColor={"bg-amber-600"}
             hover={"hover:bg-amber-500"}
+            onClick={() => handleAddtoCart(product)}
           >
             add to cart
           </Button>
@@ -73,3 +81,4 @@ function ProductRow({ product }) {
 }
 
 export default ProductRow;
+// dispatch({type:"addtocart", payload:product})
